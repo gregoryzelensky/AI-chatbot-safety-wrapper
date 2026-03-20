@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BuddyBot — AI Chat Bot for your child</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Varela&display=swap" rel="stylesheet">
+  <meta name="color-scheme" content="only light">
   <style>
+    :root { color-scheme: only light; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -252,7 +254,16 @@
       letter-spacing: -0.15px;
       color: #6b7280;
       white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
+    .social-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .social-item svg { flex-shrink: 0; }
 
     /* ===== HERO RIGHT VISUAL ===== */
     .hero-right {
@@ -509,7 +520,7 @@
     .feature-body {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 16px;
     }
     .feature-2 .feature-icon,
     .feature-3 .feature-icon {
@@ -535,20 +546,15 @@
     .feature-desc {
       font-family: 'Be Vietnam Pro', sans-serif;
       font-weight: 400;
-      font-size: 18px;
-      line-height: 29.25px;
-      color: #6b7280;
-    }
-    .feature-2 .feature-desc,
-    .feature-3 .feature-desc {
       font-size: 16px;
       line-height: 26px;
+      color: #6b7280;
     }
-    .feature-4 .feature-desc { color: rgba(249, 248, 255, 0.80); font-size: 16px; line-height: 26px; }
+    .feature-4 .feature-desc { color: rgba(249, 248, 255, 0.80); }
     .feature-4-body {
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 16px;
     }
 
     /* ===== TRUST / ABOUT SECTION ===== */
@@ -566,15 +572,21 @@
       gap: 16px;
     }
     .trust-badge {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 16px;
+      gap: 10px;
+      background: #eef0fb;
+      border-radius: 100px;
+      height: 36px;
+      padding: 0 20px 0 14px;
+      box-sizing: border-box;
     }
     .trust-badge-text {
       font-family: 'Varela', sans-serif;
       font-size: 16px;
       color: #613eff;
       line-height: 24px;
+      font-weight: 600;
     }
     .trust-heading {
       font-family: 'Inter', sans-serif;
@@ -583,6 +595,26 @@
       line-height: 1;
       color: #282726;
       text-align: center;
+    }
+    .trust-madeby {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .trust-madeby-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #6b7280;
+      letter-spacing: 0.02em;
+    }
+    .trust-kidslox-logo {
+      height: 22px;
+      width: auto;
+      display: block;
     }
     .trust-desc {
       font-family: 'Varela', sans-serif;
@@ -722,29 +754,29 @@
       letter-spacing: -0.15px;
       color: #ffffff;
       white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
+    .social-item.cta-item { color: rgba(255,255,255,0.9); }
 
     /* ===== FOOTER ===== */
     .footer {
-      background: #e1f0ff;
+      background: #dce9f5;
       border-radius: 48px 48px 0 0;
     }
     .footer-inner {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 64px 48px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      column-gap: 48px;
-      row-gap: 48px;
+      padding: 56px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .footer-brand {
-      grid-column: 1;
-      grid-row: 1;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 12px;
     }
     .footer-logo {
       display: flex;
@@ -780,35 +812,9 @@
       color: #6b7280;
       max-width: 280px;
     }
-    .footer-links {
-      grid-column: 2;
-      grid-row: 1;
-      position: relative;
-      height: 89.5px;
-    }
-    .footer-link {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 400;
-      font-size: 12px;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: #6b7280;
-      text-decoration: underline;
-      white-space: nowrap;
-      position: absolute;
-      bottom: 0;
-    }
-    .footer-link:nth-child(1) { right: 292px; }
-    .footer-link:nth-child(2) { right: 130px; }
-    .footer-link:nth-child(3) { right: 0; }
-    .footer-bottom {
-      grid-column: 1 / span 2;
-      grid-row: 2;
-      border-top: 1px solid rgba(142, 184, 204, 0.20);
-      padding-top: 33px;
+    .footer-copy-wrap {
       display: flex;
       align-items: center;
-      justify-content: center;
     }
     .footer-copy {
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -883,7 +889,7 @@
       .cta-form-input  { text-align: left; padding: 10px 24px 10px 24px; }
       .hero-form-btn  { width: 100%; border-radius: 16px; padding: 14px 24px; }
       .hero-social-proof { position: static; top: auto; left: auto; flex-wrap: wrap; justify-content: center; }
-      .hero-social-text { white-space: normal; text-align: center; }
+      .hero-social-text { white-space: normal; flex-wrap: wrap; justify-content: center; }
 
       .hero-heading h1 { font-size: 48px; line-height: 50px; letter-spacing: -1.2px; }
       .hero-form-btn  { padding: 14px 22px; font-size: 15px; }
@@ -919,7 +925,7 @@
       /* ----- Trust ----- */
       .trust-section { padding: 56px 0 80px; }
       .trust-inner   { padding: 0 20px; align-items: center; }
-      .trust-badge   { flex-direction: column; align-items: center; text-align: center; gap: 10px; }
+      .trust-badge   { align-items: center; text-align: center; gap: 10px; }
       .trust-heading { font-size: 32px; line-height: 36px; }
       .trust-desc    { font-size: 16px; line-height: 26px; }
       .trust-stats   { width: 100%; grid-template-columns: 1fr 1fr; }
@@ -935,23 +941,19 @@
       .cta-form-input { padding: 14px 16px; text-align: left; width: 100%; box-sizing: border-box; }
       .cta-form-btn { width: 100%; text-align: center; border-radius: 16px; padding: 14px; }
       .cta-social-proof { flex-wrap: wrap; gap: 10px; justify-content: center; }
-      .cta-social-text { white-space: normal; font-size: 13px; }
+      .cta-social-text { white-space: normal; font-size: 13px; flex-wrap: wrap; justify-content: center; }
 
       /* ----- Footer ----- */
       .footer { border-radius: 28px 28px 0 0; }
       .footer-inner {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
         padding: 40px 20px;
-        row-gap: 28px;
+        gap: 24px;
+        text-align: center;
       }
-      .footer-brand  { grid-column: 1; grid-row: 1; }
-      .footer-links  {
-        grid-column: 1; grid-row: 2;
-        height: auto;
-        display: flex; flex-direction: column; gap: 14px;
-      }
-      .footer-link   { position: static; right: auto; }
-      .footer-bottom { grid-column: 1; grid-row: 3; justify-content: center; }
+      .footer-brand  { align-items: center; }
+      .footer-tagline { text-align: center; }
     }
 
     /* =============================================
@@ -1006,13 +1008,20 @@
 
         <!-- Social Proof -->
         <div class="hero-social-proof anim fade-up d4">
-          <div class="avatars">
-            <div class="avatar">👧</div>
-            <div class="avatar">👱‍♀️</div>
-            <div class="avatar">👩‍🦱</div>
-            <div class="avatar">👨‍🦰</div>
-          </div>
-          <span class="hero-social-text">Join 2,000+ parents on the waitlist</span>
+          <span class="hero-social-text">
+            <span class="social-item">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#6c63ff" opacity="0.15"/><path d="M4 7l2 2 4-4" stroke="#6c63ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Free to join
+            </span>
+            <span class="social-item">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#6c63ff" opacity="0.15"/><path d="M7 3.5v4M7 9.5v.5" stroke="#6c63ff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              No spam
+            </span>
+            <span class="social-item">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#6c63ff" opacity="0.15"/><path d="M5 6.5c0-1.1.9-2 2-2s2 .9 2 2v1.5H5V6.5zM4.5 8h5l.5.5H4l.5-.5zM6.5 10h1" stroke="#6c63ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Get notified at launch
+            </span>
+          </span>
         </div>
       </div>
 
@@ -1123,18 +1132,22 @@
   <section class="trust-section">
     <div class="trust-inner">
       <div class="trust-badge anim fade-up">
-        <img src="icon - Protecting digital.png" alt="" style="height:24px; width:auto; display:block;">
+        <img src="icon - Protecting digital.png" alt="" style="height:20px; width:auto; display:block;">
         <span class="trust-badge-text">Protecting digital childhoods since 2014</span>
       </div>
-      <h2 class="trust-heading anim fade-up d1">The App GuardianAI:<br>Made by Kidslox</h2>
-      <p class="trust-desc anim fade-up d2">GuardianAI is built on the foundation of Kidslox, the world-class mobile parental control solution. With over 10 years of experience, we help parents manage and monitor their children's digital health and safety with confidence. We don't just build tech; we build peace of mind.</p>
+      <h2 class="trust-heading anim fade-up d1">The BuddyBot App:</h2>
+      <div class="trust-madeby anim fade-up d1">
+        <span class="trust-madeby-label">made by</span>
+        <img src="kidslox-logo.png" alt="Kidslox" class="trust-kidslox-logo">
+      </div>
+      <p class="trust-desc anim fade-up d2">BuddyBot is built by the team behind Kidslox, the world-class mobile parental control solution. With over 10 years of experience, we help parents manage and monitor their children's digital health and safety with confidence. We don't just build tech; we build peace of mind.</p>
       <div class="trust-stats">
         <div class="stat-card anim scale-in d3">
           <div class="stat-number">10+ Years</div>
           <div class="stat-label">Experience</div>
         </div>
         <div class="stat-card anim scale-in d4">
-          <div class="stat-number">1M+</div>
+          <div class="stat-number">5M+</div>
           <div class="stat-label">Families Protected</div>
         </div>
       </div>
@@ -1152,13 +1165,20 @@
           <button class="cta-form-btn">Get Early Access</button>
         </div>
         <div class="cta-social-proof">
-          <div class="avatars">
-            <div class="avatar">👧</div>
-            <div class="avatar">👱‍♀️</div>
-            <div class="avatar">👩‍🦱</div>
-            <div class="avatar">👨‍🦰</div>
-          </div>
-          <span class="cta-social-text">Join 2,000+ parents on the waitlist</span>
+          <span class="cta-social-text">
+            <span class="social-item cta-item">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#fff" opacity="0.2"/><path d="M4 7l2 2 4-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Free to join
+            </span>
+            <span class="social-item cta-item">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#fff" opacity="0.2"/><path d="M7 3.5v4M7 9.5v.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              No spam
+            </span>
+            <span class="social-item cta-item">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#fff" opacity="0.2"/><path d="M5 6.5c0-1.1.9-2 2-2s2 .9 2 2v1.5H5V6.5zM4.5 8h5l.5.5H4l.5-.5zM6.5 10h1" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Get notified at launch
+            </span>
+          </span>
         </div>
       </div>
     </div>
@@ -1173,12 +1193,7 @@
         </a>
         <p class="footer-tagline">Nurturing safe digital curiosity through intelligent design and parent-first values.</p>
       </div>
-      <div class="footer-links anim fade-up d1">
-        <a href="#" class="footer-link">Privacy Policy</a>
-        <a href="#" class="footer-link">Terms of Service</a>
-        <a href="#" class="footer-link">Safety Guide</a>
-      </div>
-      <div class="footer-bottom anim fade-up d2">
+      <div class="footer-copy-wrap anim fade-up d1">
         <p class="footer-copy">© 2026 BuddyBot by Kidslox. All rights reserved.</p>
       </div>
     </div>
@@ -1187,7 +1202,7 @@
   <script>
     /* ===== ROTATING HERO TEXT ===== */
     (function () {
-      var words = ['for your child', 'safety wrapper', 'peace of mind', 'smart learning'];
+      var words = ['for your child', 'smart learning', 'peace of mind', 'safe for kids'];
       var el = document.getElementById('rotating-word');
       var idx = 0;
 
