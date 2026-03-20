@@ -10,6 +10,25 @@
     :root { color-scheme: only light; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* Force light theme — override any WebView / OS dark mode */
+    @media (prefers-color-scheme: dark) {
+      html {
+        filter: none !important;
+        background: #ffffff !important;
+        color-scheme: only light !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #282726 !important;
+        filter: none !important;
+      }
+    }
+
+    html {
+      forced-color-adjust: none;
+      color-scheme: only light;
+      background: #ffffff;
+    }
     body {
       font-family: 'Inter', sans-serif;
       color: #282726;
@@ -954,6 +973,13 @@
       }
       .footer-brand  { align-items: center; }
       .footer-tagline { text-align: center; }
+      .footer-copy-wrap { margin-top: 8px; }
+      .footer-copy {
+        white-space: normal;
+        text-align: center;
+        max-width: 200px;
+        line-height: 20px;
+      }
     }
 
     /* =============================================
